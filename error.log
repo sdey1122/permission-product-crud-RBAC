@@ -1,0 +1,7 @@
+{"level":"error","message":"seedRolesWithPermissions is not defined","service":"RBAC-API","timestamp":"2026-04-09T07:07:52.169Z"}
+{"level":"error","message":"Role not found","service":"RBAC-API","timestamp":"2026-04-09T08:47:13.382Z"}
+{"level":"error","message":"Role not found","service":"RBAC-API","timestamp":"2026-04-09T08:48:46.751Z"}
+{"level":"error","message":"Role not found","service":"RBAC-API","timestamp":"2026-04-09T08:49:55.431Z"}
+{"level":"error","message":"Role not found","service":"RBAC-API","timestamp":"2026-04-09T08:50:30.593Z"}
+{"level":"error","message":"next is not a function","service":"RBAC-API","timestamp":"2026-04-09T08:52:41.827Z"}
+{"level":"error","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.rbt1qcd.mongodb.net","service":"RBAC-API","timestamp":"2026-07-27T09:16:49.498Z"}

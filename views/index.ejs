@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head', { title: 'Home' }) %>
+</head>
+
+<body class="bg-light">
+
+    <%- include('./partials/navbar') %>
+
+    <div class="container py-5">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <h1 class="display-5 fw-bold">
+                    <i class="bi bi-shield-lock-fill text-primary"></i>
+                    Role Based Access Control System
+                </h1>
+
+                <p class="lead mt-3">
+                    A secure Role-Based Access Control (RBAC) web application built with
+                    Node.js, Express.js, MongoDB, JWT Authentication, Bootstrap 5 and EJS.
+                    This project demonstrates authentication, authorization and product
+                    management for Admin, Manager and User roles.
+                </p>
+
+                <div class="mt-4">
+
+                    <% if (!user) { %>
+
+                        <a href="/login" class="btn btn-primary me-2">
+                            <i class="bi bi-box-arrow-in-right"></i>
+                            Login
+                        </a>
+
+                        <a href="/signup" class="btn btn-outline-dark">
+                            <i class="bi bi-person-plus"></i>
+                            Register
+                        </a>
+
+                    <% } else { %>
+
+                        <a href="/dashboard" class="btn btn-primary me-2">
+                            <i class="bi bi-speedometer2"></i>
+                            Dashboard
+                        </a>
+
+                        <a href="/products" class="btn btn-outline-dark me-2">
+                            <i class="bi bi-box-seam"></i>
+                            View Products
+                        </a>
+
+                        <% if (user.role && (user.role.name === "admin" || user.role.name === "manager")) { %>
+
+                            <a href="/products/create" class="btn btn-success">
+                                <i class="bi bi-plus-circle"></i>
+                                Add Product
+                            </a>
+
+                        <% } %>
+
+                    <% } %>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+
+                <i class="bi bi-person-lock text-primary" style="font-size:220px;"></i>
+
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="card shadow-sm h-100">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-person-check-fill text-success fs-1"></i>
+
+                        <h4 class="mt-3">Authentication</h4>
+
+                        <p>
+                            Secure login and registration using JWT authentication and HTTP-only cookies.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card shadow-sm h-100">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-shield-check text-primary fs-1"></i>
+
+                        <h4 class="mt-3">Authorization</h4>
+
+                        <p>
+                            Different features are available for Admin, Manager and User according to their role.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card shadow-sm h-100">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-box-seam text-warning fs-1"></i>
+
+                        <h4 class="mt-3">Product Management</h4>
+
+                        <p>
+                            Perform CRUD operations on products based on the assigned user role.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <%- include('./partials/footer') %>
+
+</body>
+
+</html>
